@@ -15,7 +15,7 @@ import {WhyKotlinSection} from './why-kotlin-section';
 import {UsageSection} from './usage-section';
 import {StartSection} from './start-section';
 
-import '../index/index.scss';
+import './index.scss';
 import '../../../css/grid.scss'
 
 function OverviewPageContent() {
