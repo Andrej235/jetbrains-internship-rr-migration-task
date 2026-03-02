@@ -9,6 +9,8 @@ import "./overview.scss";
 import { LatestFromKotlinSection } from "~/components/latest-from-kotlin-section/latest-from-kotlin-section";
 import { WhyKotlinSection } from "~/components/why-kotlin-section/why-kotlin-section";
 import { tabs } from "~/components/why-kotlin-section/programming-language/data";
+import { UsageSection } from "~/components/usage-section/usage-section";
+import { StartSection } from "~/components/start-section/start-section";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "Title" }, { name: "description", content: "" }];
@@ -26,6 +28,8 @@ export default function OverviewPage() {
       <OverviewPageContent />
       <LatestFromKotlinSection />
       <WhyKotlinSection />
+      <UsageSection />
+      <StartSection />
     </ThemeProvider>
   );
 }
