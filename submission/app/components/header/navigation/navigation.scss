@@ -1,0 +1,101 @@
+nav.navigation-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 32px;
+  list-style: none;
+  margin-right: 56px;
+
+  .link-container {
+    position: relative;
+
+    &:hover .dropdown {
+      display: flex;
+    }
+
+    & > a {
+      display: block;
+      line-height: 60px !important;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.75);
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.95);
+      }
+    }
+  }
+
+  .dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #27282c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 8px 0;
+    min-width: 260px;
+    z-index: 100;
+
+    & > a {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
+      white-space: nowrap;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.95);
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+  }
+
+  @media (max-width: 630px) {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #27282c;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    padding: 8px 0 16px;
+    gap: 0;
+    margin-right: 0;
+    z-index: 50;
+
+    &.open {
+      display: flex;
+    }
+
+    .link-container {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+      & > a {
+        padding: 0 24px;
+        line-height: 50px !important;
+      }
+    }
+
+    .dropdown {
+      position: static;
+      background-color: rgba(255, 255, 255, 0.04);
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 4px 0 8px 0;
+      min-width: unset;
+      z-index: auto;
+    }
+
+    .dropdown-link {
+      padding: 8px 36px;
+    }
+  }
+}
