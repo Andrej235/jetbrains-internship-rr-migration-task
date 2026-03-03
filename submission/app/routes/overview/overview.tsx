@@ -12,6 +12,11 @@ import { tabs } from "~/components/why-kotlin-section/programming-language/data"
 import { UsageSection } from "~/components/usage-section/usage-section";
 import { StartSection } from "~/components/start-section/start-section";
 
+import hljs from "highlight.js/lib/core";
+import kotlin from "highlight.js/lib/languages/kotlin";
+import "highlight.js/styles/github.css";
+hljs.registerLanguage("kotlin", kotlin);
+
 export function meta({}: Route.MetaArgs) {
   return [{ title: "Title" }, { name: "description", content: "" }];
 }
@@ -22,22 +27,22 @@ export async function loader() {
   };
 }
 
-export default function OverviewPage() {
-  return (
-    <ThemeProvider theme="dark">
-      <OverviewPageContent />
-      <LatestFromKotlinSection />
-      <WhyKotlinSection />
-      <UsageSection />
-      <StartSection />
-    </ThemeProvider>
-  );
-}
-
 function OverviewPageContent() {
   return (
     <div className="overview-page">
       <HeaderSection />
+      <LatestFromKotlinSection />
+      <WhyKotlinSection />
+      <UsageSection />
+      <StartSection />
     </div>
+  );
+}
+
+export default function OverviewPage() {
+  return (
+    <ThemeProvider theme="dark">
+      <OverviewPageContent />
+    </ThemeProvider>
   );
 }
