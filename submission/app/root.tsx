@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./styles/styles-v2.scss";
 import { Header } from "./components/header/header";
+import Footer from "./components/footer/footer";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -23,6 +24,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Header />
         {children}
+        <Footer />
+
         <ScrollRestoration />
         <Scripts />
       </body>
